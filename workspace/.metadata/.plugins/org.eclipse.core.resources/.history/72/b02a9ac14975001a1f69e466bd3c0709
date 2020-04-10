@@ -1,0 +1,5 @@
+package kr.or.yonsai.persistence;
+
+public class TimeMapperTests {
+
+}

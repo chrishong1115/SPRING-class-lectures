@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.yonsai.mapper.BoardMapper">
+
+	<select id="getList" resultType="kr.yonsai.domain.BoardVO">
+		<![CDATA[
+			select * from tbl_board where bno > 0
+		]]>
+	</select>
+
+	<insert id="insert">
+		insert into sample_db.tbl_board
+		(title, content, writer)
+		values (#{title},#{content}, #{writer})
+	</insert>
+
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE"
+			resultType="int">
+			select auto_increment
+			from information_schema.tables
+			where
+			table_schema = "sample_db"
+			and table_name = "tbl_board"
+		</selectKey>
+		insert into sample_db.tbl_board
+		(bno, title, content, writer)
+		values (#{bno}, #{title},#{content}, #{writer})
+	</insert>
+
+	<select id="read" resultType="kr.yonsai.domain.BoardVO">
+		select * from sample_db.tbl_board
+		where bno = #{bno}
+	</select>
+
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+	
+	<update id="update">
+		update tbl_board 
+		set title=#{title}, content=#{content}, writer=#{writer}, updatedate=sysdate where bno = #{bno}
+		
+	</update>
+</mapper>

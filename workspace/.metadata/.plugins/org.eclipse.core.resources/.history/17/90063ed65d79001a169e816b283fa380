@@ -1,0 +1,5 @@
+package com.hsi.persistence;
+
+public class UserMapperTest {
+
+}

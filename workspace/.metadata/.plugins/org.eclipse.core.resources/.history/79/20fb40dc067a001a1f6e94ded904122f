@@ -1,0 +1,5 @@
+package kr.yonsai.domain;
+
+public interface BoardMapper {
+
+}

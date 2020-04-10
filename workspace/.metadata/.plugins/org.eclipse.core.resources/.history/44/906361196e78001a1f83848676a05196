@@ -1,0 +1,9 @@
+package kr.or.yonsai.domain;
+
+import lombok.Data;
+
+@Data
+public class SampleDTOList {
+
+	private List<SampleDTO>
+}

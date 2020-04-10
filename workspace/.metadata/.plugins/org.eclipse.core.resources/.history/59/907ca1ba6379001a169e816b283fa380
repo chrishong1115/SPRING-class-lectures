@@ -1,0 +1,5 @@
+package com.hsi.mapper;
+
+public interface MemoMapper {
+
+}
