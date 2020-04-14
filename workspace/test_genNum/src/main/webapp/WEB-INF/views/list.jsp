@@ -6,28 +6,38 @@
 <html>
 <head>
 <style>
-table { margin: 10px auto}
-div { text-align: center;}
-table tr td{
-	border: 1px solid black;
-	text-align: center;
-	font-size: 20px;
-	padding: 10px;
+table {
+	margin: 10px auto;
 	border-collapse: collapse;
 }
+
+div {
+	text-align: center;
+}
+
+table tr td {
+	border: 1px solid black;
+	text-align: center;
+	font-size: 12px;
+	padding: 5px;
+}
+th {
+	border: 1px solid black;
+	text-align: center;
+	font-size: 14px;
+	padding: 5px;}
 </style>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
+<div>
 	<table>
-		<thead>
-			<tr>
-				<th>#번호</th>
-				<th>Data</th>
-				<th>regdate</th>
-			</tr>
-		</thead>
+		<tr>
+			<th>#번호</th>
+			<th>Data</th>
+			<th>Regdate</th>
+		</tr>
 		<c:forEach items="${list }" var="list">
 			<tr>
 				<td><c:out value="${list.sn }" /></td>
@@ -36,8 +46,8 @@ table tr td{
 						value="${list.regdate }" /></td>
 			</tr>
 		</c:forEach>
-
-
 	</table>
+	</div>
+	<div><a href="/">등록 페이지로</a></div>
 </body>
 </html>

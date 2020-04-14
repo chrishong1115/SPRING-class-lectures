@@ -10,6 +10,7 @@ table {
 
 div {
 	text-align: center;
+	font-size: 20px;
 }
 
 table tr td {
