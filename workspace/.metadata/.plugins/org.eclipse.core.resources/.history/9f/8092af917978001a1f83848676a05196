@@ -1,5 +1,0 @@
-package kr.or.yonsai.exception;
-
-public class CommonExceptionAdvice {
-
-}
