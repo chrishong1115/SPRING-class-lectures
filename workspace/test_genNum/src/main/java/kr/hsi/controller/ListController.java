@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.hsi.domain.ListVO;
 import kr.hsi.service.ListService;
@@ -24,8 +25,22 @@ public class ListController {
 		model.addAttribute("list", service.getList());
 	}
 	
+//	@PostMapping("/register")
+//	public String register(ListVO list) {
+//		service.register(list);
+//		return "redirect:/register";
+//	}
+	@GetMapping("/register")
+	public void register() {
+	}
+	
 	@PostMapping("/register")
-	public void register(ListVO list) {
+	public String register(ListVO list, RedirectAttributes rttr) {
+		log.info("register: " + list);
 		service.register(list);
+		
+		rttr.addFlashAttribute("result", list.getSn());
+		
+		return "redirect:/register";
 	}
 }

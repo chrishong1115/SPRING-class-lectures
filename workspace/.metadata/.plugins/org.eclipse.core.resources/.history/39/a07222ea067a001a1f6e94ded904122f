@@ -1,8 +1,0 @@
-package kr.yonsai.domain;
-
-import org.apache.ibatis.annotations.Select;
-
-public interface BoardMapper {
-
-	@Select("select * from tbl_board where bno > 0")
-}

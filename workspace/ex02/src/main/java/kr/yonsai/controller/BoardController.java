@@ -28,7 +28,7 @@ public class BoardController {
 	}
 	@GetMapping("/register")
 	public void register() {
-		
+		log.info("register");
 	}
 	
 	@PostMapping("/register")
@@ -41,9 +41,9 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@GetMapping("/get")
+	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("bno") int bno, Model model) {
-		log.info("/get");
+		log.info("/get or modify");
 		model.addAttribute("board", service.get(bno));
 	}
 	
