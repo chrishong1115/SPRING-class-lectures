@@ -1,5 +1,7 @@
 package kr.yonsai.mapper;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.yonsai.domain.BoardVO;
+import kr.yonsai.domain.Criteria;
 import kr.yonsai.mapper.BoardMapper;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -57,7 +60,7 @@ public class BoardMapperTest {
 	public void testDelete() {
 		log.info("delete count: " + mapper.delete(3));
 	}
-	*/
+	
 	@Test
 	public void testUpdate() {
 		BoardVO board = new BoardVO();
@@ -68,6 +71,17 @@ public class BoardMapperTest {
 		
 		int count = mapper.update(board);
 		log.info("UPDATE Count : " + count);
+	}
+	*
+	*/
+	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria(2,3);
+//		cri.setPageNum(2);
+//		cri.setAmount(3);
+		List<BoardVO> list = mapper.getListWithPaging(cri);
+		list.forEach(board -> log.info(board));
 	}
 			
 }

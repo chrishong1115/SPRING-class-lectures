@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.yonsai.domain.BoardVO;
+import kr.yonsai.domain.Criteria;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
@@ -37,15 +38,15 @@ public class BoardServiceTest {
 //		log.info("생성된 게시물의 번호 : " + board.getBno());
 //	}
 
-//	@Test
-//	public void testGetList() {
-//		service.getList().forEach(board -> log.info(board));
-//	}
-
 	@Test
-	public void testGet() {
-		log.info(service.get(1));
+	public void testGetList() {
+		service.getList(new Criteria(2,3)).forEach(board -> log.info(board));
 	}
+
+//	@Test
+//	public void testGet() {
+//		log.info(service.get(1));
+//	}
 	
 //	@Test
 //	public void testDelete() {

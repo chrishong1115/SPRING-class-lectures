@@ -3,6 +3,7 @@ package kr.yonsai.service;
 import java.util.List;
 
 import kr.yonsai.domain.BoardVO;
+import kr.yonsai.domain.Criteria;
 
 public interface BoardService {
 
@@ -14,5 +15,6 @@ public interface BoardService {
 	
 	public boolean remove(int bno);
 	
-	public List<BoardVO> getList();
+//	public List<BoardVO> getList();
+	public List<BoardVO> getList(Criteria cri);
 }

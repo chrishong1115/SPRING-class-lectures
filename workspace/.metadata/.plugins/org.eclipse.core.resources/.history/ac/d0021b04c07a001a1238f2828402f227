@@ -1,5 +1,0 @@
-package kr.yonsai.service;
-
-public interface BoardService {
-
-}

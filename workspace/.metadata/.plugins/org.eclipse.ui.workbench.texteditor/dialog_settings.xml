@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Save"/>
+		<item key="selection" value="updatedate"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="updateDate"/>
 			<item value="save"/>
 			<item value="myModal"/>
 			<item value="formObj.submit();"/>
@@ -22,9 +23,9 @@
 			<item value="upda"/>
 			<item value="up"/>
 			<item value="operation"/>
-			<item value="remove"/>
 		</list>
 		<list key="replacehistory">
+			<item value="updatedate"/>
 			<item value="&lt;/button&gt;&lt;/td&gt;"/>
 			<item value="&quot;submit&quot;"/>
 			<item value="button "/>
