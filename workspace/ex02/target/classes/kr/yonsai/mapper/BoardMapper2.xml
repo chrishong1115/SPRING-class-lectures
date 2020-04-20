@@ -9,9 +9,9 @@
 			select * from tbl_board where bno > 0
 		]]>
 	</select>
-	
-	
-	<sql id="criteria">
+
+	<select id="getListWithPaging" resultType="kr.yonsai.domain.BoardVO">
+		SELECT * FROM sample_db.tbl_board 
 		<trim prefix="where (" suffix=")" prefixOverrides="OR">
 			<foreach item='type' collection="typeArr">
 				<trim prefix="OR">
@@ -29,14 +29,41 @@
 				</trim>
 			</foreach>
 		</trim>
-	</sql>
-		
-	<select id="getListWithPaging" resultType="kr.yonsai.domain.BoardVO">
-		SELECT * FROM sample_db.tbl_board 
-		<include refid="criteria"></include>
 		ORDER BY bno DESC
 		LIMIT #{offsetNum}, #{amount} 
+		<!--
+		<![CDATA[
+			select tb.bno, tb.title, tb.content, tb.writer, tb.regdate, tb.updatedate 
+			from (
+				select /*+INDEX_DESC(sample_db.tbl_board pk_board) */
+					ROW_NUMBER() OVER (ORDER BY bno DESC) AS rn, bno, title, content, writer, regdate, updatedate from sample_db.tbl_board) as tb
+				where 
+		]]>
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'C'.toString()">
+							content like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like concat('%',#{keyword},'%')
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
 		
+		<![CDATA[
+			rn <= #{pageNum} * #{amount}
+			) 
+		where rn > (#{pageNum} - 1) * #{amount} 
+		
+		]]> 
+		-->
 	</select>
 
 	<insert id="insert">
@@ -73,7 +100,6 @@
 	</update>
 
 	<select id="getTotalCount" resultType="int">
-			select count(*) from sample_db.tbl_board 
-			<include refid="criteria"></include>
+			select count(*) from sample_db.tbl_board where bno > 0
 	</select>
 </mapper>

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="updatedate"/>
+		<item key="selection" value="move"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="updateDate"/>
-			<item value="save"/>
-			<item value="myModal"/>
-			<item value="formObj.submit();"/>
-			<item value="} else if (operation === &apos;list&apos;) {"/>
-			<item value="formObj.attr(&quot;action&quot;, &quot;/board/remove&quot;);"/>
-			<item value="var operation = $(this).data(&quot;oper&quot;);"/>
-			<item value="e.preventDefault();"/>
-			<item value="$(&apos;button&apos;).on(&quot;click&quot;, function(e) {"/>
-			<item value="var formObj = $(&quot;form&quot;);"/>
-			<item value="$(document).ready(function() {"/>
-			<item value="&lt;script type=&quot;text/javascript&quot;&gt;"/>
-			<item value="upda"/>
-			<item value="up"/>
-			<item value="operation"/>
+			<item value="move"/>
+			<item value="pageMaker"/>
+			<item value="list"/>
+			<item value="modi"/>
+			<item value="form"/>
+			<item value="off"/>
+			<item value="actionform"/>
+			<item value="action form"/>
+			<item value="limit"/>
+			<item value="rn"/>
+			<item value="getList"/>
+			<item value="remo"/>
+			<item value="modify"/>
+			<item value="board.bno"/>
+			<item value="check"/>
 		</list>
 		<list key="replacehistory">
 			<item value="updatedate"/>
