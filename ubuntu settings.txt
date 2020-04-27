@@ -1,0 +1,68 @@
+■ ubuntu MariaDB 설치 ■
+sudo apt update
+sudo apt upgrade
+sudo apt-get install mariadb-server mariadb-client
+sudo vim /etc/mysql/mariadb.conf.d/50-server.cnf 
+bind-address = 0.0.0.0
+:wq
+sudo systemctl restart mariadb
+netstat -ntlp | grep 3306
+sudo mysql
+create database sample_db;
+use sample_db;
+CREATE TABLE `tbl_board` (
+	`bno` INT(11) NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(200) NOT NULL,
+	`content` VARCHAR(2000) NOT NULL,
+	`writer` VARCHAR(100) NOT NULL,
+	`regdate` TIMESTAMP NULL DEFAULT current_timestamp(),
+	`updatedate` TIMESTAMP NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+	PRIMARY KEY (`bno`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+grant all privileges on sample_db.* to 'hong'@'%' identified by 'qwer1234';
+flush privileges;
+
+■ MariaDB ■
+새연결
+server host : ip주소
+database : sample_db
+username, password 입력 
+왼쪽아래 test connection
+완료
+
+■ Spring ■
+root-context.xml
+localhost 부분 host ip주소로 수정
+
+■ ubuntu java 설치 ■
+sudo apt-get install openjdk-8jre
+sudo apt-get install openjdk-8-jdk
+java -version
+javac -version
+sudo vim /etc/profile 
+(가장 아래에 추가)
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASS_PATH=$JAVA_HOME/lib:$CLASS_PATH
+source /etc/profile (설정 reload)
+echo $JAVA_HOME
+$JAVA_HOME/bin/javac -version
+
+■ ubuntu tomcat 설치 ■
+sudo apt-get install tomcat9
+sudo /usr/share/tomcat9/bin/version.sh
+sudo ufw allow 8080/tcp
+sudo service tomcat9 start
+systemctl status tomcat7.service
+
+■ war 파일로 배포하기 ■
+Spring 프로젝트 우클릭 export - WAR file
+Filezilla로 /var/lib/tomcat9/webapps 로 이동
+sudo vim /var/lib/tomcat9/conf/server.xml
+<host name= ..... > 밑에 아래줄 추가
+<Context path="/" docBase="ex02_1" reloadable="true" />
+192.168.174.xxx:8080/board/list 확인
+

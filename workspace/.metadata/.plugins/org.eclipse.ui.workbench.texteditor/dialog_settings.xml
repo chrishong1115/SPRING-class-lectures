@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="regBtn"/>
+		<item key="selection" value="bind"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="bind"/>
+			<item value="mapper"/>
+			<item value="control"/>
+			<item value="controller"/>
+			<item value="spring-test"/>
+			<item value="junit"/>
+			<item value="lombok"/>
+			<item value="servlet"/>
 			<item value="regBtn"/>
 			<item value="register"/>
 			<item value="move"/>
@@ -15,14 +23,6 @@
 			<item value="list"/>
 			<item value="modi"/>
 			<item value="form"/>
-			<item value="off"/>
-			<item value="actionform"/>
-			<item value="action form"/>
-			<item value="limit"/>
-			<item value="rn"/>
-			<item value="getList"/>
-			<item value="remo"/>
-			<item value="modify"/>
 		</list>
 		<list key="replacehistory">
 			<item value="updatedate"/>
