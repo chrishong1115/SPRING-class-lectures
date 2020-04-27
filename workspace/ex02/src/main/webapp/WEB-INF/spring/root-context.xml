@@ -13,7 +13,7 @@
 			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="jdbcUrl"
 			value="jdbc:log4jdbc:mariadb://localhost:3306/sample_db"></property>
-		<property name="username" value="hong"></property>
+		<property name="username" value="sample_ex"></property>
 		<property name="password" value="qwer1234"></property>
 	</bean>
 
