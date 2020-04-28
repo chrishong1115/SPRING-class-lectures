@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.yonsai.domain.Criteria;
+import kr.yonsai.domain.ReplyPageDTO;
 import kr.yonsai.domain.ReplyVO;
 import kr.yonsai.service.ReplyService;
 import lombok.AllArgsConstructor;
@@ -39,12 +40,13 @@ public class ReplyController {
 
 	@GetMapping(value = "/pages/{bno}/{page}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public ResponseEntity<List<ReplyVO>> getList(@PathVariable("page") int page, @PathVariable("bno") int bno) {
+	public ResponseEntity<ReplyPageDTO> getList(@PathVariable("page") int page, @PathVariable("bno") int bno) {
 		log.info("getList.....................");
 		Criteria cri = new Criteria(page, 10);
-		log.info(cri);
+		log.info("get Reply List bno............... : " + bno);
+		log.info("cri .....: " + cri);
 
-		return new ResponseEntity<>(service.getList(cri, bno), HttpStatus.OK);
+		return new ResponseEntity<>(service.getListPage(cri, bno), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/{rno}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })

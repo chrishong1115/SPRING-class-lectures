@@ -3,6 +3,8 @@ package kr.yonsai.mapper;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import javax.swing.Spring;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class ReplyMapperTest {
 
+
+	
 	private int[] bnoArr = {457, 456, 455, 454, 453};
 	
 	@Setter(onMethod_ = @Autowired)
@@ -62,13 +66,20 @@ public class ReplyMapperTest {
 //		replies.forEach(reply -> log.info(reply));
 //	}
 	
+//	@Test
+//	public void testUpdate() {
+//		int targetRno = 10;
+//		ReplyVO vo = mapper.read(targetRno);
+//		vo.setReply("update reply ");
+//		int count = mapper.update(vo);
+//		log.info("UPDATE COUNT .............. : " + count);
+//	}
+	
 	@Test
-	public void testUpdate() {
-		int targetRno = 10;
-		ReplyVO vo = mapper.read(targetRno);
-		vo.setReply("update reply ");
-		int count = mapper.update(vo);
-		log.info("UPDATE COUNT .............. : " + count);
+	public void testList2() {
+		Criteria cri = new Criteria(2, 3);
+		List<ReplyVO> replies = mapper.getListWithPaging(cri, 449);
+		replies.forEach(reply -> log.info(reply));
 	}
 	
 }

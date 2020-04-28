@@ -24,6 +24,11 @@
 		select rno, bno, reply, replyer, replydate, updatedate
 		from tbl_reply
 		where bno = #{bno}
-		order by rno asc
+		order by rno desc
+		limit #{cri.offsetNum}, #{cri.amount}
+	</select>
+	
+	<select id="getCountByBno" resultType="int">
+		select count(rno) from tbl_reply where bno = #{bno}
 	</select>
 </mapper>
