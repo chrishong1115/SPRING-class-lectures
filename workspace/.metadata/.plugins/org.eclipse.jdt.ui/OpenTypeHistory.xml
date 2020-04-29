@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=ex03/D:\/hong\/prgs\/Java\/jre1.8.0_241\/lib\/rt.jar=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/javase\/8\/docs\/api\/=/&lt;java.lang(Object.class[Object" modifiers="33" timestamp="1581922899759"/>
-<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.yonsai.mapper{ReplyMapper.java[ReplyMapper" modifiers="513" timestamp="1588041378248"/>
-<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.yonsai.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1587953761963"/>
+<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.yonsai.mapper{ReplyMapper.java[ReplyMapper" modifiers="513" timestamp="1588045059614"/>
+<typeInfo handle="=ex03/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;kr.yonsai.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1588045232924"/>
 </typeInfoHistroy>
